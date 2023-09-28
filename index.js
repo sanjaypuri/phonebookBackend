@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(cors(
   {
-    origin:["http://localhost:3000", "http://192.168.1.52:3000"],
+    origin:["http://localhost:3000", "https://phonebookfrontend.vercel.app/"],
     methods:["GET", "POST"],
     credentials: true
   }
