@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv').config();
+const cors = require('cors');
 const conn = require('./connection');
 const bodyParser = require('body-parser');
 
@@ -7,6 +8,14 @@ const port = parseInt(process.env.PORT) || 5000;
 
 const app = express();
 app.use(express.json());
+
+app.use(cors(
+  {
+    origin:["http://localhost:3000", "http://192.168.1.52:3000"],
+    methods:["GET", "POST"],
+    credentials: true
+  }
+));
 
 app.use(express.static('./build'));
 
